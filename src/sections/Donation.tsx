@@ -1,49 +1,49 @@
-import { Heart, Shield, TrendingUp, Users, GraduationCap, Leaf, Building } from 'lucide-react';
+// import { Heart, Shield, TrendingUp, Users, GraduationCap, Leaf, Building } from 'lucide-react';
 
 const Donation = () => {
-  const programs = [
-    {
-      icon: GraduationCap,
-      title: 'Sponsor a Child\'s Education',
-      amount: '₹5,000',
-      period: '/year',
-      description: 'Support a child\'s educational journey',
-    },
-    {
-      icon: Users,
-      title: 'Support Women\'s Livelihood',
-      amount: '₹10,000',
-      period: '/program',
-      description: 'Empower women through skill development',
-    },
-    {
-      icon: Leaf,
-      title: 'Watershed Development',
-      amount: '₹25,000',
-      period: '/acre',
-      description: 'Contribute to sustainable agriculture',
-    },
-    {
-      icon: Heart,
-      title: 'Livestock Support',
-      amount: '₹15,000',
-      period: '/family',
-      description: 'Provide livestock to a family',
-    },
-    {
-      icon: Building,
-      title: 'Old Age Home Support',
-      amount: '₹3,000',
-      period: '/month',
-      description: 'Care for elderly community members',
-    },
-  ];
+  // const programs = [
+  //   {
+  //     icon: GraduationCap,
+  //     title: 'Sponsor a Child\'s Education',
+  //     amount: '₹5,000',
+  //     period: '/year',
+  //     description: 'Support a child\'s educational journey',
+  //   },
+  //   {
+  //     icon: Users,
+  //     title: 'Support Women\'s Livelihood',
+  //     amount: '₹10,000',
+  //     period: '/program',
+  //     description: 'Empower women through skill development',
+  //   },
+  //   {
+  //     icon: Leaf,
+  //     title: 'Watershed Development',
+  //     amount: '₹25,000',
+  //     period: '/acre',
+  //     description: 'Contribute to sustainable agriculture',
+  //   },
+  //   {
+  //     icon: Heart,
+  //     title: 'Livestock Support',
+  //     amount: '₹15,000',
+  //     period: '/family',
+  //     description: 'Provide livestock to a family',
+  //   },
+  //   {
+  //     icon: Building,
+  //     title: 'Old Age Home Support',
+  //     amount: '₹3,000',
+  //     period: '/month',
+  //     description: 'Care for elderly community members',
+  //   },
+  // ];
 
-  const benefits = [
-    { icon: Shield, title: '80G Tax Exemption', description: 'Save up to 50% on your donation' },
-    { icon: TrendingUp, title: '100% Transparency', description: 'Track how your donation is used' },
-    { icon: Heart, title: 'Direct Impact', description: 'See the change you create' },
-  ];
+  // const benefits = [
+  //   { icon: Shield, title: '80G Tax Exemption', description: 'Save up to 50% on your donation' },
+  //   { icon: TrendingUp, title: '100% Transparency', description: 'Track how your donation is used' },
+  //   { icon: Heart, title: 'Direct Impact', description: 'See the change you create' },
+  // ];
 
   return (
     <section id="donate" className="py-20 bg-gradient-to-br from-green-50 to-white">
@@ -56,7 +56,7 @@ const Donation = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        {/* <div className="grid md:grid-cols-3 gap-6 mb-16">
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon;
             return (
@@ -112,7 +112,7 @@ const Donation = () => {
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="grid md:grid-cols-2 gap-12 mb-16">
           <div className="bg-white rounded-xl p-8 shadow-lg">

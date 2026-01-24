@@ -3,7 +3,7 @@ import Footer from './components/Footer';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Team from './sections/Team';
-import Programs from './sections/Programs';
+// import Programs from './sections/Programs';
 // import Impact from './sections/Impact';
 // import Partners from './sections/Partners';
 import Infrastructure from './sections/Infrastructure';
@@ -12,8 +12,8 @@ import Donation from './sections/Donation';
 import Gallery from './sections/Gallery';
 // import News from './sections/News';
 import Contact from './sections/Contact';
-import Downloads from './sections/Downloads';
-import Transparency from './sections/Transparency';
+// import Downloads from './sections/Downloads';
+// import Transparency from './sections/Transparency';
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
         <Hero />
         <About />
         <Team />
-        <Programs />
+        {/* <Programs /> */}
         {/* <Impact /> */}
         {/* <Partners /> */}
         <Infrastructure />
@@ -32,8 +32,8 @@ function App() {
         <Gallery />
         {/* <News /> */}
         <Contact />
-        <Downloads />
-        <Transparency />
+        {/* <Downloads /> */}
+        {/* <Transparency /> */}
       </main>
       <Footer />
     </div>
