@@ -1,51 +1,37 @@
-import { FileText, Download, Award, BookOpen, Briefcase } from 'lucide-react';
+import { FileText, Download, Award, User } from 'lucide-react';
+
+import cert12A from '../assets/docs/12 A Certificate.pdf';
+import cert80G from '../assets/docs/80G Certificate.pdf';
+import leiCert from '../assets/docs/LEI Certificate 984500C0A2KH9EB4C891.pdf';
+import secretaryBiodata from '../assets/docs/Secretary Biodata.pdf';
 
 const Downloads = () => {
   const documents = [
     {
-      category: 'Registration Documents',
+      category: 'Registration Certificates',
       icon: Award,
       files: [
-        { name: 'Trust Registration Act 1882 Certificate', size: '2.5 MB' },
-        { name: 'PAN Card (AACTL6698K)', size: '1.2 MB' },
-        { name: '12A Registration Certificate', size: '1.8 MB' },
-        { name: '80G Registration Certificate', size: '1.5 MB' },
-        { name: 'Darpan Registration (KA/2025/091091)', size: '1.3 MB' },
+        { name: '12A Registration Certificate', size: '658 KB', file: cert12A },
+        { name: '80G Registration Certificate', size: '527 KB', file: cert80G },
+        { name: 'LEI Certificate', size: '249 KB', file: leiCert },
       ],
     },
     {
-      category: 'Annual Reports',
-      icon: FileText,
+      category: 'Team Information',
+      icon: User,
       files: [
-        { name: 'Annual Report 2025-26', size: '5.2 MB' },
-        { name: 'Impact Assessment Report 2025', size: '3.8 MB' },
-      ],
-    },
-    {
-      category: 'Financial Documents',
-      icon: Briefcase,
-      files: [
-        { name: 'Audited Financial Statement 2025-26', size: '4.1 MB' },
-        { name: 'Balance Sheet', size: '2.3 MB' },
-        { name: 'Income & Expenditure Statement', size: '2.1 MB' },
-      ],
-    },
-    {
-      category: 'Brochures & Materials',
-      icon: BookOpen,
-      files: [
-        { name: 'Organizational Brochure', size: '6.5 MB' },
-        { name: 'Program Overview', size: '4.2 MB' },
-        { name: 'Donor Information Kit', size: '3.9 MB' },
+        { name: 'Secretary Biodata - G. Brahmananda', size: '5.5 MB', file: secretaryBiodata },
       ],
     },
   ];
 
-  const forms = [
-    'Volunteer Application Form',
-    'Internship Application Form',
-    'Beneficiary Enrollment Form',
-    'Partnership Proposal Form',
+  const registrationInfo = [
+    { label: 'Trust Registration', value: 'Trust Registration Act 1882' },
+    { label: 'PAN', value: 'AACTL6698K' },
+    { label: '12A Status', value: 'Active' },
+    { label: '80G Status', value: 'Active' },
+    { label: 'Darpan ID', value: 'KA/2025/091091' },
+    { label: 'LEI Number', value: '984500C0A2KH9EB4C891' },
   ];
 
   return (
@@ -57,7 +43,7 @@ const Downloads = () => {
           </h2>
           <div className="w-24 h-1 bg-green-600 mx-auto mb-8"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Access our reports, certificates, brochures, and application forms
+            Access our certificates, documents, and registration information
           </p>
         </div>
 
@@ -74,8 +60,10 @@ const Downloads = () => {
                 </div>
                 <div className="space-y-3">
                   {doc.files.map((file, idx) => (
-                    <div
+                    <a
                       key={idx}
+                      href={file.file}
+                      download
                       className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-green-50 transition-colors cursor-pointer group"
                     >
                       <div className="flex items-center flex-grow">
@@ -88,7 +76,7 @@ const Downloads = () => {
                         </div>
                       </div>
                       <Download className="w-5 h-5 text-gray-400 group-hover:text-green-600" />
-                    </div>
+                    </a>
                   ))}
                 </div>
               </div>
@@ -98,16 +86,16 @@ const Downloads = () => {
 
         <div className="bg-white rounded-xl p-8 shadow-lg mb-16">
           <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-            Application Forms
+            Registration Information
           </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {forms.map((form, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {registrationInfo.map((info, index) => (
               <div
                 key={index}
-                className="p-6 border-2 border-gray-200 rounded-lg hover:border-green-600 hover:shadow-lg transition-all cursor-pointer text-center group"
+                className="p-4 bg-green-50 rounded-lg text-center"
               >
-                <Download className="w-10 h-10 text-green-600 mx-auto mb-3 group-hover:scale-110 transition-transform" />
-                <p className="font-semibold text-gray-900 group-hover:text-green-600">{form}</p>
+                <p className="text-sm text-gray-600 mb-1">{info.label}</p>
+                <p className="font-bold text-green-700">{info.value}</p>
               </div>
             ))}
           </div>

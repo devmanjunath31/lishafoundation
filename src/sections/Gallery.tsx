@@ -1,36 +1,35 @@
-import { Image, Video, Calendar } from 'lucide-react';
 import { useState } from 'react';
+import { X } from 'lucide-react';
+
+import activity01 from '../assets/images/activity/activity-01.jpg';
+import activity02 from '../assets/images/activity/activity-02.jpg';
+import activity03 from '../assets/images/activity/activity-03.jpg';
+import activity04 from '../assets/images/activity/activity-04.jpg';
+import activity05 from '../assets/images/activity/activity-05.jpg';
+import activity06 from '../assets/images/activity/activity-06.jpg';
+import activity07 from '../assets/images/activity/activity-07.jpg';
+import activity08 from '../assets/images/activity/activity-08.jpg';
+import activity09 from '../assets/images/activity/activity-09.jpg';
+import activity10 from '../assets/images/activity/activity-10.jpg';
+import activity11 from '../assets/images/activity/activity-11.jpg';
+import activity12 from '../assets/images/activity/activity-12.jpg';
+import activity13 from '../assets/images/activity/activity-13.jpg';
+import activity14 from '../assets/images/activity/activity-14.jpg';
+import activity15 from '../assets/images/activity/activity-15.jpg';
+import activity16 from '../assets/images/activity/activity-16.jpg';
+import activity17 from '../assets/images/activity/activity-17.jpg';
+import activity18 from '../assets/images/activity/activity-18.jpg';
+import activity19 from '../assets/images/activity/activity-19.jpg';
+import activity20 from '../assets/images/activity/activity-20.jpg';
 
 const Gallery = () => {
-  const [activeTab, setActiveTab] = useState<'photos' | 'videos' | 'events'>('photos');
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  const categories = [
-    'Education Programs',
-    'Women Empowerment',
-    'Livelihood Programs',
-    'Agriculture',
-    'Watershed Projects',
-    'Training Sessions',
-    'Events',
-    'Team Photos',
-  ];
-
-  const events = [
-    {
-      date: '2025-06-06',
-      title: 'Trust Foundation Day',
-      description: 'Inauguration ceremony of Lisha Charitable Seva Trust',
-    },
-    {
-      date: '2025-07-15',
-      title: 'SHG Formation Workshop',
-      description: 'Training program for 50 women on Self Help Group formation',
-    },
-    {
-      date: '2025-08-20',
-      title: 'Watershed Project Launch',
-      description: 'Launch of watershed development in 3 villages',
-    },
+  const activityImages = [
+    activity01, activity02, activity03, activity04, activity05,
+    activity06, activity07, activity08, activity09, activity10,
+    activity11, activity12, activity13, activity14, activity15,
+    activity16, activity17, activity18, activity19, activity20,
   ];
 
   return (
@@ -44,149 +43,42 @@ const Gallery = () => {
           </p>
         </div>
 
-        <div className="flex justify-center mb-12">
-          <div className="inline-flex rounded-lg border-2 border-gray-200 p-1">
-            <button
-              onClick={() => setActiveTab('photos')}
-              className={`px-6 py-3 rounded-lg font-semibold transition-colors ${
-                activeTab === 'photos'
-                  ? 'bg-green-600 text-white'
-                  : 'text-gray-700 hover:text-green-600'
-              }`}
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {activityImages.map((img, index) => (
+            <div
+              key={index}
+              className="relative w-full pt-[100%] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all cursor-pointer group"
+              onClick={() => setSelectedImage(img)}
             >
-              <Image className="w-5 h-5 inline-block mr-2" />
-              Photos
-            </button>
-            <button
-              onClick={() => setActiveTab('videos')}
-              className={`px-6 py-3 rounded-lg font-semibold transition-colors ${
-                activeTab === 'videos'
-                  ? 'bg-green-600 text-white'
-                  : 'text-gray-700 hover:text-green-600'
-              }`}
-            >
-              <Video className="w-5 h-5 inline-block mr-2" />
-              Videos
-            </button>
-            <button
-              onClick={() => setActiveTab('events')}
-              className={`px-6 py-3 rounded-lg font-semibold transition-colors ${
-                activeTab === 'events'
-                  ? 'bg-green-600 text-white'
-                  : 'text-gray-700 hover:text-green-600'
-              }`}
-            >
-              <Calendar className="w-5 h-5 inline-block mr-2" />
-              Events
-            </button>
-          </div>
+              <img
+                src={img}
+                alt={`Activity ${index + 1}`}
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+            </div>
+          ))}
         </div>
 
-        {activeTab === 'photos' && (
-          <div>
-            <div className="flex flex-wrap justify-center gap-3 mb-12">
-              {categories.map((category, index) => (
-                <button
-                  key={index}
-                  className="px-4 py-2 bg-green-50 text-green-700 rounded-full text-sm font-medium hover:bg-green-600 hover:text-white transition-colors"
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {[...Array(12)].map((_, index) => (
-                <div
-                  key={index}
-                  className="aspect-square rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
-                >
-                  <div className="w-full h-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-white">
-                    <div className="text-center">
-                      <Image size={48} className="mx-auto mb-2" />
-                      <p className="text-sm">Program Photo {index + 1}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+        {selectedImage && (
+          <div
+            className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
+            onClick={() => setSelectedImage(null)}
+          >
+            <button
+              className="absolute top-6 right-6 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors"
+              onClick={() => setSelectedImage(null)}
+            >
+              <X size={28} />
+            </button>
+            <img
+              src={selectedImage}
+              alt="Full size"
+              className="max-w-full max-h-[90vh] object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            />
           </div>
         )}
-
-        {activeTab === 'videos' && (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[...Array(6)].map((_, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <div className="aspect-video bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-white">
-                  <Video size={64} />
-                </div>
-                <div className="p-4">
-                  <h4 className="font-bold text-gray-900 mb-2">Program Video {index + 1}</h4>
-                  <p className="text-sm text-gray-600">
-                    Showcasing our work in rural communities
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-
-        {activeTab === 'events' && (
-          <div className="max-w-4xl mx-auto space-y-6">
-            {events.map((event, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border-l-4 border-green-600"
-              >
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 w-24 text-center">
-                    <Calendar className="w-8 h-8 text-green-600 mx-auto mb-2" />
-                    <p className="text-sm font-semibold text-gray-900">
-                      {new Date(event.date).toLocaleDateString('en-US', {
-                        month: 'short',
-                        day: 'numeric',
-                        year: 'numeric',
-                      })}
-                    </p>
-                  </div>
-                  <div className="flex-grow ml-6">
-                    <h4 className="text-xl font-bold text-gray-900 mb-2">{event.title}</h4>
-                    <p className="text-gray-700">{event.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-
-        <div className="mt-16 text-center">
-          <p className="text-gray-600 mb-4">
-            Follow us on social media for more updates and behind-the-scenes content
-          </p>
-          <div className="flex justify-center gap-4">
-            <a
-              href="#"
-              className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white hover:bg-green-700 transition-colors"
-            >
-              f
-            </a>
-            <a
-              href="#"
-              className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white hover:bg-green-700 transition-colors"
-            >
-              in
-            </a>
-            <a
-              href="#"
-              className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white hover:bg-green-700 transition-colors"
-            >
-              yt
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );

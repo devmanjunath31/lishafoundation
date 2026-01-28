@@ -1,13 +1,36 @@
 import { Users, UserCircle, Shield } from 'lucide-react';
 
+import secretaryImg from '../assets/images/team/secretary.jpg';
+import treasurerImg from '../assets/images/team/treasurer.jpg';
+import trustee1Img from '../assets/images/team/trustee-1.jpg';
+import trustee2Img from '../assets/images/team/trustee-2.jpg';
+
 const Team = () => {
   const leadership = [
-    { name: 'President', role: 'Trust Administration', designation: 'President' },
-    { name: 'G. Brahmananda', role: 'Trust Administration', designation: 'Secretary' },
-    { name: 'Treasurer', role: 'Trust Administration', designation: 'Treasurer' },
-    { name: 'Joint Secretary', role: 'Trust Administration', designation: 'Joint Secretary' },
-    { name: 'Trustee-1', role: 'Trust Administration', designation: 'Trustee' },
-    { name: 'Trustee-2', role: 'Trust Administration', designation: 'Trustee' },
+    {
+      name: 'G. Brahmananda',
+      designation: 'Secretary',
+      image: secretaryImg,
+      description: 'Founder and visionary leader driving the Trust\'s mission of community development and empowerment across Tumkur District.'
+    },
+    {
+      name: 'Treasurer',
+      designation: 'Treasurer',
+      image: treasurerImg,
+      description: 'Ensuring financial accountability and transparency in all Trust operations and fund management.'
+    },
+    {
+      name: 'Trustee',
+      designation: 'Trustee',
+      image: trustee1Img,
+      description: 'Contributing to strategic decision-making and governance of Trust programs and initiatives.'
+    },
+    {
+      name: 'Trustee',
+      designation: 'Trustee',
+      image: trustee2Img,
+      description: 'Supporting community outreach and program implementation across rural areas.'
+    },
   ];
 
   const stats = [
@@ -47,21 +70,24 @@ const Team = () => {
           <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">
             Trust Administration
           </h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {leadership.map((member, index) => (
               <div
                 key={index}
                 className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
               >
-                <div className="h-64 bg-gradient-to-br from-green-600 to-green-500 flex items-center justify-center">
-                  <UserCircle className="w-32 h-32 text-white" />
+                <div className="relative w-full pt-[100%] bg-gray-100 overflow-hidden">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="absolute inset-0 w-full h-full object-cover object-center"
+                  />
                 </div>
                 <div className="p-6">
                   <h4 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h4>
                   <p className="text-green-600 font-semibold mb-2">{member.designation}</p>
                   <p className="text-gray-600 text-sm">
-                    Dedicated to driving organizational excellence and community impact through
-                    strategic leadership and governance.
+                    {member.description}
                   </p>
                 </div>
               </div>

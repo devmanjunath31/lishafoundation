@@ -1,5 +1,7 @@
 import { Heart, Users, Leaf, TrendingUp } from 'lucide-react';
 
+import heroImage from '../assets/images/activity/activity-01.jpg';
+
 const Hero = () => {
   const stats = [
     { icon: Users, value: '10,000+', label: 'Beneficiaries Reached' },
@@ -46,12 +48,16 @@ const Hero = () => {
             </a>
           </div>
 
-          <div className="relative w-full h-96 rounded-2xl overflow-hidden shadow-2xl mb-16">
-            <div className="absolute inset-0 bg-gradient-to-r from-green-600/90 to-green-500/90 flex items-center justify-center">
+          <div className="relative w-full h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl mb-16">
+            <img
+              src={heroImage}
+              alt="Lisha Charitable Seva Trust Community Work"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-center pb-12">
               <div className="text-center text-white">
-                <Users size={80} className="mx-auto mb-4" />
-                <p className="text-2xl font-semibold">Transforming Lives, Building Communities</p>
-                <p className="text-lg mt-2">Founded on 06-06-2025 in Hurulihal, Tumkur District</p>
+                <p className="text-2xl md:text-3xl font-semibold mb-2">Transforming Lives, Building Communities</p>
+                <p className="text-lg">Founded on 06-06-2025 in Hurulihal, Tumkur District</p>
               </div>
             </div>
           </div>
