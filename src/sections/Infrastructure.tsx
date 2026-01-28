@@ -46,11 +46,11 @@ const Infrastructure = () => {
     },
   ];
 
-  const stats = [
-    { value: '13x17', label: 'Main Office Space', unit: 'sq ft', color: 'from-blue-500 to-cyan-500' },
-    { value: '50x60', label: 'Training Hall', unit: 'sq ft', color: 'from-green-500 to-emerald-500' },
-    { value: '50+', label: 'Training Capacity', unit: 'people', color: 'from-amber-500 to-orange-500' },
-  ];
+  // const stats = [
+  //   { value: '13x17', label: 'Main Office Space', unit: 'sq ft', color: 'from-blue-500 to-cyan-500' },
+  //   { value: '50x60', label: 'Training Hall', unit: 'sq ft', color: 'from-green-500 to-emerald-500' },
+  //   { value: '50+', label: 'Training Capacity', unit: 'people', color: 'from-amber-500 to-orange-500' },
+  // ];
 
   return (
     <section id="infrastructure" className="py-24 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">

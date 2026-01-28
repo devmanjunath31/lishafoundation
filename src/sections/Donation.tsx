@@ -1,4 +1,4 @@
-import { Heart, Building2, QrCode, ShieldCheck, FileCheck, CreditCard, Sparkles } from 'lucide-react';
+import { Heart, Building2, ShieldCheck, FileCheck, CreditCard } from 'lucide-react';
 import qrCodeImg from '../assets/images/bank/Screenshot_20260128-133947_M365 Copilot.png';
 
 const Donation = () => {

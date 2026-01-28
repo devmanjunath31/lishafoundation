@@ -41,11 +41,11 @@ const Team = () => {
     },
   ];
 
-  const stats = [
-    { icon: Shield, value: '6', label: 'Leadership Members', color: 'from-green-500 to-emerald-600' },
-    { icon: Users, value: '18', label: 'Staff Members', color: 'from-blue-500 to-cyan-600' },
-    { icon: UserCircle, value: '20', label: 'Volunteers', color: 'from-amber-500 to-orange-600' },
-  ];
+  // const stats = [
+  //   { icon: Shield, value: '6', label: 'Leadership Members', color: 'from-green-500 to-emerald-600' },
+  //   { icon: Users, value: '18', label: 'Staff Members', color: 'from-blue-500 to-cyan-600' },
+  //   { icon: UserCircle, value: '20', label: 'Volunteers', color: 'from-amber-500 to-orange-600' },
+  // ];
 
   return (
     <section id="team" className="py-24 bg-gradient-to-b from-white via-green-50/30 to-white relative overflow-hidden">
