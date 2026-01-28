@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import logoImg from '../assets/logo/IMG-20260128-WA0000.jpg';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -53,9 +54,11 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-green-600 to-green-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
-              L
-            </div>
+            <img
+              src={logoImg}
+              alt="Lisha Charitable Seva Trust Logo"
+              className="w-14 h-14 rounded-full object-cover shadow-md"
+            />
             <div>
               <h1 className="text-xl font-bold text-green-700">Lisha Charitable Seva Trust</h1>
               <p className="text-xs text-gray-600">Selfless Service to Community</p>
