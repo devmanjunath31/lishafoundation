@@ -1,4 +1,4 @@
-import { Users, UserCircle, Shield, Heart, Award, Sparkles } from 'lucide-react';
+import { Users, UserCircle, Heart, Award, Sparkles } from 'lucide-react';
 
 import secretaryImg from '../assets/images/team/secretary.jpg';
 import treasurerImg from '../assets/images/team/treasurer.jpg';
