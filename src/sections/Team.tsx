@@ -69,28 +69,6 @@ const Team = () => {
           </p>
         </div>
 
-        {/* Stats Section */}
-        <div className="grid md:grid-cols-3 gap-6 mb-20">
-          {stats.map((stat, index) => {
-            const Icon = stat.icon;
-            return (
-              <div
-                key={index}
-                className="group relative bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 overflow-hidden"
-              >
-                {/* Gradient overlay on hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
-
-                <div className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br ${stat.color} mb-6 shadow-lg group-hover:scale-110 transition-transform duration-500`}>
-                  <Icon className="w-10 h-10 text-white" />
-                </div>
-                <p className="text-5xl font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">{stat.value}</p>
-                <p className="text-gray-600 font-medium">{stat.label}</p>
-              </div>
-            );
-          })}
-        </div>
-
         {/* Leadership Section */}
         <div className="mb-20">
           <div className="flex items-center justify-center gap-3 mb-12">

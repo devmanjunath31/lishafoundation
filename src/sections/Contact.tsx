@@ -152,7 +152,7 @@ const Contact = () => {
               ))}
             </div>
 
-            <div className="bg-gradient-to-br from-green-600 to-green-500 rounded-xl p-8 text-white">
+            {/* <div className="bg-gradient-to-br from-green-600 to-green-500 rounded-xl p-8 text-white">
               <h3 className="text-2xl font-bold mb-4">Visit Our Office</h3>
               <p className="text-green-100 mb-6">
                 We welcome visitors to our office during working hours. Please call ahead to
@@ -168,7 +168,7 @@ const Contact = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

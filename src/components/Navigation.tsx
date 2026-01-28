@@ -17,14 +17,14 @@ const Navigation = () => {
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Team', href: '#team' },
-    { name: 'Programs', href: '#programs' },
+    // { name: 'Programs', href: '#programs' },
     // { name: 'Impact', href: '#impact' },
     // { name: 'Partners', href: '#partners' },
     { name: 'Infrastructure', href: '#infrastructure' },
     // { name: 'Get Involved', href: '#get-involved' },
     { name: 'Donate', href: '#donate' },
     { name: 'Gallery', href: '#gallery' },
-    { name: 'News', href: '#news' },
+    // { name: 'News', href: '#news' },
     { name: 'Contact', href: '#contact' },
   ];
 

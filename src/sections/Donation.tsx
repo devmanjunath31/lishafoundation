@@ -1,201 +1,127 @@
-// import { Heart, Shield, TrendingUp, Users, GraduationCap, Leaf, Building } from 'lucide-react';
+import { Heart, Building2, QrCode, ShieldCheck, FileCheck, CreditCard, Sparkles } from 'lucide-react';
+import qrCodeImg from '../assets/images/bank/Screenshot_20260128-133947_M365 Copilot.png';
 
 const Donation = () => {
-  // const programs = [
-  //   {
-  //     icon: GraduationCap,
-  //     title: 'Sponsor a Child\'s Education',
-  //     amount: '₹5,000',
-  //     period: '/year',
-  //     description: 'Support a child\'s educational journey',
-  //   },
-  //   {
-  //     icon: Users,
-  //     title: 'Support Women\'s Livelihood',
-  //     amount: '₹10,000',
-  //     period: '/program',
-  //     description: 'Empower women through skill development',
-  //   },
-  //   {
-  //     icon: Leaf,
-  //     title: 'Watershed Development',
-  //     amount: '₹25,000',
-  //     period: '/acre',
-  //     description: 'Contribute to sustainable agriculture',
-  //   },
-  //   {
-  //     icon: Heart,
-  //     title: 'Livestock Support',
-  //     amount: '₹15,000',
-  //     period: '/family',
-  //     description: 'Provide livestock to a family',
-  //   },
-  //   {
-  //     icon: Building,
-  //     title: 'Old Age Home Support',
-  //     amount: '₹3,000',
-  //     period: '/month',
-  //     description: 'Care for elderly community members',
-  //   },
-  // ];
+  const bankDetails = [
+    { label: 'Account Name', value: 'Lisha charitable seva trust' },
+    { label: 'Bank', value: 'State Bank of India' },
+    { label: 'Branch', value: 'Huliyar, Ramgopal circle' },
+    { label: 'Account Number', value: '44249639311', isMono: true },
+    { label: 'IFSC Code', value: 'SBIN0041115', isMono: true },
+    { label: 'Account Type', value: 'Current Account' },
+  ];
 
-  // const benefits = [
-  //   { icon: Shield, title: '80G Tax Exemption', description: 'Save up to 50% on your donation' },
-  //   { icon: TrendingUp, title: '100% Transparency', description: 'Track how your donation is used' },
-  //   { icon: Heart, title: 'Direct Impact', description: 'See the change you create' },
-  // ];
+  const certifications = [
+    { label: 'Trust Reg. Act 1882', value: 'Registered', icon: Building2, color: 'from-blue-500 to-cyan-500' },
+    { label: 'PAN', value: 'AACTL6698K', icon: FileCheck, color: 'from-green-500 to-emerald-500' },
+    { label: '12A Registration', value: 'Active', icon: ShieldCheck, color: 'from-amber-500 to-orange-500' },
+    { label: '80G Registration', value: 'Active', icon: ShieldCheck, color: 'from-purple-500 to-violet-500' },
+  ];
 
   return (
-    <section id="donate" className="py-20 bg-gradient-to-br from-green-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="donate" className="py-24 bg-gradient-to-b from-white via-green-50/30 to-white relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-green-100/40 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-100/40 rounded-full blur-3xl" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Support Our Cause</h2>
-          <div className="w-24 h-1 bg-green-600 mx-auto mb-8"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Your contribution can transform lives and build stronger communities
+          <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <Heart className="w-4 h-4" />
+            Make a Difference
+          </div>
+          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            Support Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600">Cause</span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Your contribution can transform lives and build stronger communities across Tumkur District
           </p>
         </div>
 
-        {/* <div className="grid md:grid-cols-3 gap-6 mb-16">
-          {benefits.map((benefit, index) => {
-            const Icon = benefit.icon;
-            return (
-              <div
-                key={index}
-                className="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <Icon className="w-12 h-12 text-green-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
+        {/* Main Donation Cards */}
+        <div className="grid lg:grid-cols-2 gap-8">
+          {/* Left Column - Bank Details + Certifications */}
+          <div className="space-y-6">
+            {/* Bank Details Card */}
+            <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center shadow-lg">
+                  <CreditCard className="w-7 h-7 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900">Bank Transfer</h3>
+                  <p className="text-gray-500 text-sm">Direct bank deposit</p>
+                </div>
               </div>
-            );
-          })}
-        </div>
 
-        <div className="mb-16">
-          <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-            Choose a Program to Support
-          </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {programs.map((program, index) => {
-              const Icon = program.icon;
-              return (
-                <div
-                  key={index}
-                  className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all border-2 border-gray-100 hover:border-green-600"
-                >
-                  <div className="bg-gradient-to-br from-green-600 to-green-500 p-6 text-white text-center">
-                    <Icon className="w-12 h-12 mx-auto mb-3" />
-                    <h4 className="text-xl font-bold mb-2">{program.title}</h4>
-                    <div className="text-3xl font-bold">
-                      {program.amount}
-                      <span className="text-lg font-normal">{program.period}</span>
+              <div className="space-y-4">
+                {bankDetails.map((detail, index) => (
+                  <div
+                    key={index}
+                    className="flex justify-between items-center py-3 px-4 rounded-xl bg-gray-50 hover:bg-green-50 transition-colors"
+                  >
+                    <span className="text-gray-600 font-medium">{detail.label}</span>
+                    <span className={`text-gray-900 font-semibold ${detail.isMono ? 'font-mono bg-gray-100 px-3 py-1 rounded-lg text-sm' : ''}`}>
+                      {detail.value}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Certifications - 2x2 Grid */}
+            <div className="grid grid-cols-2 gap-4">
+              {certifications.map((cert, index) => {
+                const Icon = cert.icon;
+                return (
+                  <div
+                    key={index}
+                    className="group bg-white rounded-2xl p-5 shadow-lg border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center"
+                  >
+                    <div className={`inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br ${cert.color} mb-3 shadow-md group-hover:scale-110 transition-transform duration-300`}>
+                      <Icon className="w-5 h-5 text-white" />
                     </div>
+                    <p className="text-xs text-gray-500 mb-1">{cert.label}</p>
+                    <p className="font-bold text-gray-900 text-sm">{cert.value}</p>
                   </div>
-                  <div className="p-6">
-                    <p className="text-gray-700 mb-4">{program.description}</p>
-                    <button className="w-full px-6 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-colors">
-                      Donate Now
-                    </button>
-                  </div>
-                </div>
-              );
-            })}
-            <div className="bg-gradient-to-br from-gray-100 to-white rounded-xl p-6 flex flex-col items-center justify-center border-2 border-dashed border-gray-300">
-              <Heart className="w-16 h-16 text-gray-400 mb-4" />
-              <h4 className="text-xl font-bold text-gray-900 mb-2">Custom Amount</h4>
-              <p className="text-gray-600 text-center mb-4">
-                Donate any amount to support our general programs
-              </p>
-              <button className="px-6 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-colors">
-                Donate Custom Amount
-              </button>
-            </div>
-          </div>
-        </div> */}
-
-        <div className="grid md:grid-cols-2 gap-12 mb-16">
-          <div className="bg-white rounded-xl p-8 shadow-lg">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Bank Transfer Details</h3>
-            <div className="space-y-3 text-gray-700">
-              <div className="flex justify-between py-2 border-b border-gray-200">
-                <span className="font-semibold">Account Name:</span>
-                <span>Lisha charitable seva trust</span>
-              </div>
-              <div className="flex justify-between py-2 border-b border-gray-200">
-                <span className="font-semibold">Bank:</span>
-                <span>State Bank of India</span>
-              </div>
-              <div className="flex justify-between py-2 border-b border-gray-200">
-                <span className="font-semibold">Branch:</span>
-                <span>Huliyar, Ramgopal circle</span>
-              </div>
-              <div className="flex justify-between py-2 border-b border-gray-200">
-                <span className="font-semibold">Account Number:</span>
-                <span className="font-mono">44249639311</span>
-              </div>
-              <div className="flex justify-between py-2 border-b border-gray-200">
-                <span className="font-semibold">IFSC Code:</span>
-                <span className="font-mono">SBIN0041115</span>
-              </div>
-              <div className="flex justify-between py-2 border-b border-gray-200">
-                <span className="font-semibold">Account Type:</span>
-                <span>Current Account</span>
-              </div>
+                );
+              })}
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-green-600 to-green-500 rounded-xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-6">How Your Donation is Used</h3>
-            <div className="space-y-4">
-              <div>
-                <div className="flex justify-between mb-2">
-                  <span>Program Expenses</span>
-                  <span className="font-bold">85%</span>
+          {/* Right Column - QR Code Card */}
+          <div className="group relative bg-gradient-to-br from-green-600 via-emerald-600 to-green-700 rounded-3xl px-8 py-6 text-white overflow-hidden shadow-xl h-fit">
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-2xl" />
+            <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full blur-xl" />
+
+            <div className="relative z-10">
+              {/* <div className="flex items-center gap-4 mb-6">
+                <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+                  <QrCode className="w-7 h-7 text-white" />
                 </div>
-                <div className="w-full bg-white/20 rounded-full h-2">
-                  <div className="bg-white rounded-full h-2" style={{ width: '85%' }}></div>
+                <div>
+                  <h3 className="text-2xl font-bold">Scan & Pay</h3>
+                  <p className="text-green-200 text-sm">Quick UPI payment</p>
                 </div>
+              </div> */}
+
+              {/* QR Code Image */}
+              <div className="bg-white rounded-2xl p-4 shadow-lg">
+                <img
+                  src={qrCodeImg}
+                  alt="UPI QR Code for Donation"
+                  className="w-full h-auto rounded-xl"
+                />
               </div>
-              <div>
-                <div className="flex justify-between mb-2">
-                  <span>Administrative Costs</span>
-                  <span className="font-bold">10%</span>
-                </div>
-                <div className="w-full bg-white/20 rounded-full h-2">
-                  <div className="bg-white rounded-full h-2" style={{ width: '10%' }}></div>
-                </div>
-              </div>
-              <div>
-                <div className="flex justify-between mb-2">
-                  <span>Fundraising Costs</span>
-                  <span className="font-bold">5%</span>
-                </div>
-                <div className="w-full bg-white/20 rounded-full h-2">
-                  <div className="bg-white rounded-full h-2" style={{ width: '5%' }}></div>
-                </div>
-              </div>
+
+              {/* <p className="text-center text-green-100 text-sm mt-4">
+                Scan the QR code using any UPI app to donate
+              </p> */}
             </div>
-            <p className="mt-6 text-green-100 text-sm">
-              We maintain complete transparency in fund utilization. Annual audit reports are
-              available for download.
-            </p>
           </div>
         </div>
-
-        {/* <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl text-center">
-          <h3 className="text-3xl font-bold text-gray-900 mb-4">CSR Partnerships</h3>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            We welcome corporate partnerships under CSR initiatives. Contact us for detailed
-            project proposals and collaboration opportunities.
-          </p>
-          <a
-            href="#contact"
-            className="inline-block px-8 py-4 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-colors shadow-lg"
-          >
-            Explore CSR Opportunities
-          </a>
-        </div> */}
       </div>
     </section>
   );

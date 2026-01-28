@@ -1,4 +1,4 @@
-import { Target, Eye, Award, Shield, Lightbulb, Users, Heart } from 'lucide-react';
+import { Target, Eye, Award, Shield, Lightbulb, Users, Heart, Flag, FileCheck, BadgeCheck, Building2, Sparkles } from 'lucide-react';
 
 const About = () => {
   const coreValues = [
@@ -11,10 +11,10 @@ const About = () => {
   ];
 
   const milestones = [
-    { year: '2025', event: 'Trust founded in Hurulihal, Tumkur District' },
-    { year: '2025', event: 'Registered under Trust Registration Act 1882' },
-    { year: '2025', event: 'Obtained 12A and 80G tax exemption certificates' },
-    { year: '2025', event: 'Darpan Registration completed (KA/2025/091091)' },
+    { year: '2025', event: 'Trust founded in Hurulihal, Tumkur District', icon: Flag, color: 'from-green-500 to-emerald-500' },
+    { year: '2025', event: 'Registered under Trust Registration Act 1882', icon: Building2, color: 'from-blue-500 to-cyan-500' },
+    { year: '2025', event: 'Obtained 12A and 80G tax exemption certificates', icon: FileCheck, color: 'from-amber-500 to-orange-500' },
+    { year: '2025', event: 'Darpan Registration completed (KA/2025/091091)', icon: BadgeCheck, color: 'from-purple-500 to-violet-500' },
   ];
 
   return (
@@ -55,26 +55,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* <div className="bg-gradient-to-br from-gray-50 to-green-50 rounded-2xl p-8 md:p-12 mb-16">
-          <div className="flex flex-col md:flex-row gap-8 items-center">
-            <div className="w-full md:w-1/3">
-              <div className="w-48 h-48 mx-auto bg-gradient-to-br from-green-600 to-green-500 rounded-full flex items-center justify-center text-white">
-                <Users size={80} />
-              </div>
-            </div>
-            <div className="w-full md:w-2/3">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Founder's Message</h3>
-              <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                "Our journey began with a simple belief - that every individual, regardless of their
-                background, deserves the opportunity to live a life of dignity and prosperity. Through
-                Lisha Charitable Seva Trust, we are committed to making this vision a reality by
-                working hand-in-hand with communities across Tumkur District."
-              </p>
-              <p className="text-gray-900 font-semibold">- G. Brahmananda, Secretary</p>
-            </div>
-          </div>
-        </div> */}
-
         <div className="mb-16">
           <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Our Core Values</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -94,21 +74,56 @@ const About = () => {
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl p-8 border-2 border-gray-100">
-          <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Our Journey</h3>
-          <div className="space-y-6">
-            {milestones.map((milestone, index) => (
-              <div key={index} className="flex items-start">
-                <div className="flex-shrink-0 w-24 text-right pr-6">
-                  <span className="inline-block bg-green-600 text-white px-4 py-2 rounded-full font-semibold">
-                    {milestone.year}
-                  </span>
-                </div>
-                <div className="flex-grow border-l-2 border-green-600 pl-6 pb-6">
-                  <p className="text-gray-700 text-lg">{milestone.event}</p>
-                </div>
+        {/* Our Journey Section */}
+        <div className="mb-16">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
+              <Sparkles className="w-4 h-4" />
+              Milestones
+            </div>
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900">Our Journey</h3>
+          </div>
+
+          {/* Timeline */}
+          <div className="max-w-3xl mx-auto">
+            <div className="relative">
+              {/* Vertical line */}
+              <div className="absolute left-6 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-green-500 via-emerald-500 to-green-600" />
+
+              <div className="space-y-8">
+                {milestones.map((milestone, index) => {
+                  const Icon = milestone.icon;
+                  return (
+                    <div key={index} className="relative flex gap-6 md:gap-8">
+                      {/* Icon */}
+                      <div className={`relative z-10 flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br ${milestone.color} flex items-center justify-center shadow-lg`}>
+                        <Icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
+                      </div>
+
+                      {/* Content Card */}
+                      <div className="flex-1 group">
+                        <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl hover:border-green-200 transition-all duration-300 hover:-translate-y-1">
+                          <div className="flex flex-wrap items-center gap-3 mb-3">
+                            <span className={`inline-flex items-center gap-1.5 bg-gradient-to-r ${milestone.color} text-white px-3 py-1 rounded-full text-sm font-semibold`}>
+                              {milestone.year}
+                            </span>
+                            <span className="text-xs text-gray-400 font-medium">Step {index + 1}</span>
+                          </div>
+                          <p className="text-gray-700 text-lg leading-relaxed">
+                            {milestone.event}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
-            ))}
+
+              {/* End marker */}
+              <div className="absolute left-6 md:left-8 -bottom-4 w-0.5 h-8 flex items-end justify-center">
+                <div className="w-3 h-3 rounded-full bg-green-600 -ml-[5px]" />
+              </div>
+            </div>
           </div>
         </div>
 
