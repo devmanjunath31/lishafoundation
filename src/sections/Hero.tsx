@@ -64,7 +64,7 @@ const Hero = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
                 <a
                   href="#donate"
-                  className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-full font-semibold hover:from-green-700 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-green-500/25 hover:-translate-y-0.5"
+                  className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-60 rounded-full font-semibold hover:from-green-700 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-green-500/25 hover:-translate-y-0.5 text-white"
                 >
                   Donate Now
                   <Heart className="w-5 h-5 group-hover:scale-110 transition-transform" />
@@ -85,7 +85,7 @@ const Hero = () => {
                   <span>Registered Trust</span>
                 </div>
                 <div className="w-1 h-1 bg-gray-300 rounded-full" />
-                <span>Hurulihal, Tumkur District</span>
+                <span>Huliyar, Tumkur District</span>
               </div>
             </div>
 

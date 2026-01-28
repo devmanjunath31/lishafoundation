@@ -1,4 +1,5 @@
 import { MapPin, Phone, Mail, Heart, ArrowUp } from 'lucide-react';
+import logoImg from '../assets/logo/IMG-20260128-WA0000.jpg';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -11,13 +12,6 @@ const Footer = () => {
     { name: 'Gallery', href: '#gallery' },
     { name: 'Contact', href: '#contact' },
   ];
-
-  // const resources = [
-  //   { name: 'Downloads', href: '#downloads' },
-  //   { name: 'Transparency', href: '#transparency' },
-  //   { name: 'Annual Reports', href: '#downloads' },
-  //   { name: 'Certificates', href: '#downloads' },
-  // ];
 
   const getInvolved = [
     { name: 'Donate', href: '#donate' },
@@ -32,9 +26,11 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-green-600 to-green-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                L
-              </div>
+            <img
+              src={logoImg}
+              alt="Lisha Charitable Seva Trust Logo"
+              className="w-14 h-14 rounded-full object-cover shadow-md"
+            />
               <div>
                 <h3 className="text-xl font-bold">Lisha Charitable Seva Trust</h3>
               </div>

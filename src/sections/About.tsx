@@ -11,9 +11,10 @@ const About = () => {
   ];
 
   const milestones = [
-    { year: '2025', event: 'Trust founded in Hurulihal, Tumkur District', icon: Flag, color: 'from-green-500 to-emerald-500' },
+    { year: '2025', event: 'Trust founded in Huliyar, Tumkur District', icon: Flag, color: 'from-green-500 to-emerald-500' },
     { year: '2025', event: 'Registered under Trust Registration Act 1882', icon: Building2, color: 'from-blue-500 to-cyan-500' },
     { year: '2025', event: 'Obtained 12A and 80G tax exemption certificates', icon: FileCheck, color: 'from-amber-500 to-orange-500' },
+    { year: '2025', event: 'Obtained LEI no 984500C0A2KH9EB4C891', icon: FileCheck, color: 'from-green-500 to-green-800' },
     { year: '2025', event: 'Darpan Registration completed (KA/2025/091091)', icon: BadgeCheck, color: 'from-purple-500 to-violet-500' },
   ];
 
@@ -125,20 +126,6 @@ const About = () => {
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
-          {[
-            { label: 'Trust Reg. Act 1882', value: 'Registered' },
-            { label: 'PAN', value: 'AACTL6698K' },
-            { label: '12A Registration', value: 'Active' },
-            { label: '80G Registration', value: 'Active' },
-          ].map((cert, index) => (
-            <div key={index} className="text-center p-4 bg-green-50 rounded-lg">
-              <p className="text-sm text-gray-600 mb-2">{cert.label}</p>
-              <p className="font-semibold text-green-700">{cert.value}</p>
-            </div>
-          ))}
         </div>
       </div>
     </section>

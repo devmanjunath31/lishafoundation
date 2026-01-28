@@ -123,28 +123,15 @@ const Gallery = () => {
           ))}
         </div>
 
-        {/* Stats bar */}
-        {/* <div className="mt-16 flex flex-wrap justify-center gap-8">
-          <div className="flex items-center gap-3 bg-white rounded-full px-6 py-3 shadow-lg">
-            <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-              <Camera className="w-5 h-5 text-green-600" />
-            </div>
-            <div>
-              <p className="text-2xl font-bold text-gray-900">{activityImages.length}</p>
-              <p className="text-sm text-gray-500">Photos</p>
-            </div>
-          </div>
-        </div> */}
-
         {/* Lightbox */}
         {selectedIndex !== null && (
           <div
-            className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center"
+            className="fixed inset-0 bg-black/95 backdrop-blur-sm z-[100] flex items-center justify-center"
             onClick={closeLightbox}
           >
             {/* Close button */}
             <button
-              className="absolute top-4 right-4 md:top-6 md:right-6 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 z-10"
+              className="absolute top-20 right-4 md:top-24 md:right-6 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-gray-800 transition-all duration-300 hover:scale-110 z-10 shadow-lg"
               onClick={closeLightbox}
             >
               <X size={24} />
