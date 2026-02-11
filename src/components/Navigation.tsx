@@ -53,10 +53,10 @@ const Navigation = () => {
             <img
               src={logoImg}
               alt="Lisha Charitable Seva Trust Logo"
-              className="w-14 h-14 rounded-full object-cover shadow-md"
+              className="w-14 h-14 rounded-full object-cover"
             />
             <div>
-              <h1 className="text-xl font-bold text-green-700">Lisha Charitable Seva Trust</h1>
+              <h1 className="font-bold text-green-700">Lisha Charitable Seva Trust</h1>
               <p className="text-xs text-gray-600">Selfless Service to Community</p>
             </div>
           </div>

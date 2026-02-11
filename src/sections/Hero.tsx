@@ -1,6 +1,7 @@
+
 import { Heart, Users, Leaf, TrendingUp, ArrowRight, Sparkles, Award, BookOpen } from 'lucide-react';
 
-import heroImage from '../assets/images/other/hero.jpeg';
+import heroImage from '../assets/images/other/lisha-no-background.png';
 
 const Hero = () => {
   const stats = [
@@ -40,15 +41,6 @@ const Hero = () => {
                 Serving Since 2025
               </div>
 
-              {/* Main Heading */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-emerald-600 to-green-600">
-                  Lisha Charitable
-                </span>
-                <br />
-                <span className="text-gray-900">Seva Trust</span>
-              </h1>
-
               {/* Tagline */}
               <p className="text-xl sm:text-2xl lg:text-3xl text-gray-700 mb-6 font-light">
                 Selfless Service to <span className="text-green-600 font-medium">Community</span>
@@ -64,14 +56,14 @@ const Hero = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
                 <a
                   href="#donate"
-                  className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-60 rounded-full font-semibold hover:from-green-700 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-green-500/25 hover:-translate-y-0.5 text-white"
+                  className="group inline-flex items-center justify-center gap-3 px-8 py-3.5 bg-green-300 rounded-xl text-white font-semibold text-base transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-green-500/20 hover:-translate-y-0.5"
                 >
                   Donate Now
                   <Heart className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 </a>
                 <a
                   href="#get-involved"
-                  className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-green-600 border-2 border-green-200 rounded-full font-semibold hover:border-green-600 hover:bg-green-50 transition-all duration-300"
+                  className="group inline-flex items-center justify-center gap-3 px-8 py-3.5 bg-white text-green-700 border border-green-600 rounded-xl font-semibold text-base hover:border-green-500 hover:bg-green-50 hover:text-green-800 transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5"
                 >
                   Become a Volunteer
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -91,45 +83,13 @@ const Hero = () => {
 
             {/* Right Content - Hero Image */}
             <div className="relative order-1 lg:order-2">
-              {/* Main Image Container */}
               <div className="relative">
-                {/* Decorative frame */}
-                <div className="absolute -inset-4 bg-gradient-to-r from-green-500 to-emerald-500 rounded-3xl opacity-20 blur-xl" />
-
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <div className="relative rounded-3xl overflow-hidden">
                   <img
                     src={heroImage}
                     alt="Lisha Charitable Seva Trust Community Work"
-                    className="w-full h-80 sm:h-96 lg:h-[500px] object-cover"
+                    className="w-full h-[400px] sm:h-[450px] lg:h-[550px] object-cover object-center brightness-105"
                   />
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-
-
-                  {/* Bottom text */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <p className="text-xl sm:text-2xl font-bold mb-1">Transforming Lives</p>
-                    <p className="text-green-200 text-sm sm:text-base">Building stronger communities together</p>
-                  </div>
-                </div>
-
-                {/* Floating stat card */}
-                <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-xl hidden sm:block">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center">
-                      <Users className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-2xl font-bold text-gray-900">10K+</p>
-                      <p className="text-xs text-gray-500">Lives Impacted</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Floating badge */}
-                <div className="absolute -top-4 -right-4 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg hidden sm:flex items-center gap-2">
-                  <Sparkles className="w-4 h-4" />
-                  Est. 2025
                 </div>
               </div>
             </div>
