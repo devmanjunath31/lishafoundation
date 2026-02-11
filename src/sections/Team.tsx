@@ -1,41 +1,59 @@
 import { Users, UserCircle, Heart, Award, Sparkles } from 'lucide-react';
 
-import secretaryImg from '../assets/images/team/secretary.jpg';
+import secretaryImg from '../assets/images/team/secretary.jpeg';
 import treasurerImg from '../assets/images/team/treasurer.jpg';
-import trustee1Img from '../assets/images/team/trustee-1.jpg';
+import trustee1Img from '../assets/images/team/trustee-1.jpeg';
 import trustee2Img from '../assets/images/team/trustee-2.jpg';
+import presidentImg from '../assets/images/team/president.jpeg';
+import jointSecretaryImg from '../assets/images/team/joint_secretary.jpeg';
 
 const Team = () => {
   const leadership = [
-    {
-      name: 'G. Brahmananda',
-      designation: 'Secretary',
-      image: secretaryImg,
-      description: 'Founder and visionary leader driving the Trust\'s mission of community development and empowerment across Tumkur District.',
+        {
+      name: 'Govindaraju EK',
+      designation: 'President',
+      image: presidentImg,
+      description: 'Distinguished development professional with over 30 years of experience in social welfare, rural development, and grassroots empowerment. Leads the Trust with expertise in organic agriculture, water conservation, and community health, having managed projects funded by World Bank, NABARD, and government departments.',
       highlight: true,
       isLandscape: true
     },
     {
-      name: 'Treasurer',
+      name: 'G. Brahmananda',
+      designation: 'Secretary',
+      image: secretaryImg,
+      description: 'Founder of Lisha Charitable Seva Trust with extensive experience in DFID, NABARD, and World Bank projects. Applies expertise in ecosystem management and integrated rural development to bridge the gap between clinical rehabilitation and meaningful community participation, fostering economic stability and self-determination.',
+      highlight: true,
+      isLandscape: true
+    },
+        {
+      name: 'Chandrakala HG',
+      designation: 'Joint Secretary',
+      image: jointSecretaryImg,
+      description: 'Rural development professional with a decade of experience in NABARD programmes and SHG initiatives. Has facilitated 60-70 self-help groups and empowered 500-600 women toward financial independence. Specializes in financial inclusion, agricultural modernization, and holistic development of marginalized communities.',
+      highlight: true,
+      isLandscape: true
+    },
+    {
+      name: 'BN. Giresha',
       designation: 'Treasurer',
       image: treasurerImg,
-      description: 'Ensuring financial accountability and transparency in all Trust operations and fund management.',
+      description: 'Seasoned professional with over two decades in community mobilization and agricultural development. Founder of Kalpa Mitra Millets FPO, specializing in organic farming, value chain management, and connecting farmers with funding institutions. Drives financial accountability and sustainable agricultural growth initiatives.',
       highlight: false,
       isLandscape: false
     },
     {
-      name: 'Trustee',
+      name: 'Dr.Bhavanashree',
       designation: 'Trustee',
       image: trustee1Img,
-      description: 'Contributing to strategic decision-making and governance of Trust programs and initiatives.',
+      description: 'Doctor of Pharmacy professional committed to bridging healthcare gaps in underserved communities. Brings pharmaceutical expertise and compassionate care to the Trust\'s health initiatives. Dedicated to making quality healthcare accessible while serving society with integrity and responsibility.',
       highlight: false,
       isLandscape: true
     },
     {
-      name: 'Trustee',
+      name: 'Panindra',
       designation: 'Trustee',
       image: trustee2Img,
-      description: 'Supporting community outreach and program implementation across rural areas.',
+      description: 'Renewable energy specialist with 15 years of experience in solar, bio-gas, and wind energy projects. Integrates green technologies across domestic and industrial sectors, with innovative applications in agriculture including solar pest removal systems. Drives sustainability and ecological balance through community-led clean energy initiatives.',
       highlight: false,
       isLandscape: false
     },

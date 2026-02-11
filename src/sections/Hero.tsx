@@ -1,6 +1,6 @@
-import { Heart, Users, Leaf, TrendingUp, ArrowRight, Sparkles, Award, BookOpen, Play } from 'lucide-react';
+import { Heart, Users, Leaf, TrendingUp, ArrowRight, Sparkles, Award, BookOpen } from 'lucide-react';
 
-import heroImage from '../assets/NGO-LOGO.jpg';
+import heroImage from '../assets/images/other/hero.jpeg';
 
 const Hero = () => {
   const stats = [
@@ -105,12 +105,6 @@ const Hero = () => {
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
-                  {/* Play button overlay (optional visual element) */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-xl cursor-pointer hover:scale-110 transition-transform">
-                      <Play className="w-8 h-8 text-green-600 ml-1" />
-                    </div>
-                  </div>
 
                   {/* Bottom text */}
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white">

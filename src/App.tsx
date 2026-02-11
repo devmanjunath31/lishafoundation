@@ -10,6 +10,7 @@ import Infrastructure from './sections/Infrastructure';
 // import GetInvolved from './sections/GetInvolved';
 import Donation from './sections/Donation';
 import Gallery from './sections/Gallery';
+import Certificates from './sections/Certificates';
 // import News from './sections/News';
 import Contact from './sections/Contact';
 // import Downloads from './sections/Downloads';
@@ -30,6 +31,7 @@ function App() {
         {/* <GetInvolved /> */}
         <Donation />
         <Gallery />
+        <Certificates />
         {/* <News /> */}
         <Contact />
         {/* <Downloads /> */}
