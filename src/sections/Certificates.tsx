@@ -1,11 +1,14 @@
 import { useState } from 'react';
-import { Award, FileText, Download, Eye, X, Shield, BookOpen } from 'lucide-react';
+import { Award, FileText, Eye, X, Shield, BookOpen } from 'lucide-react';
 
 // PDF imports
 import cert12A from '../assets/docs/12 A Certificate.pdf';
 import cert80G from '../assets/docs/80G Certificate.pdf';
 import certLEI from '../assets/docs/LEI Certificate 984500C0A2KH9EB4C891.pdf';
-import certDoc2 from '../assets/docs/DOC-20260120-WA0084.(6).pdf';
+import csrCert from '../assets/docs/CSR-1_Registration letter_AC1875594.pdf';
+import registrationCert from '../assets/docs/DOC-20251228-WA0009..pdf';
+import eAnudhanCert from '../assets/docs/certificate/e_anudhan.jpeg';
+import panCard from '../assets/docs/lisha PAN no.pdf';
 
 // Image import
 import certificateImg from '../assets/docs/certificate/certificate.jpg';
@@ -22,7 +25,7 @@ interface Certificate {
 const certificates: Certificate[] = [
   {
     name: '12A Certificate',
-    description: 'Income Tax Exemption Certificate under Section 12A',
+    description: '',
     type: 'pdf',
     file: cert12A,
     icon: 'award',
@@ -30,7 +33,7 @@ const certificates: Certificate[] = [
   },
   {
     name: '80G Certificate',
-    description: 'Tax Deduction Certificate under Section 80G for donors',
+    description: '',
     type: 'pdf',
     file: cert80G,
     icon: 'shield',
@@ -38,44 +41,52 @@ const certificates: Certificate[] = [
   },
   {
     name: 'LEI Certificate',
-    description: 'Legal Entity Identifier Certificate',
+    description: '',
     type: 'pdf',
     file: certLEI,
     icon: 'file',
     color: 'from-blue-500 to-indigo-500',
   },
   {
-    name: 'Registration Certificate',
-    description: 'Trust Registration Certificate',
+    name: 'Niti Ayog',
+    description: '',
     type: 'image',
     file: certificateImg,
     icon: 'award',
     color: 'from-purple-500 to-pink-500',
   },
-  // {
-  //   name: 'Trust Deed',
-  //   description: 'Official Trust Deed Document',
-  //   type: 'pdf',
-  //   file: certDoc1,
-  //   icon: 'book',
-  //   color: 'from-teal-500 to-cyan-500',
-  // },
   {
-    name: 'Compliance Certificate',
-    description: 'Regulatory Compliance Document',
+    name: 'CSR Certificate',
+    description: '',
     type: 'pdf',
-    file: certDoc2,
-    icon: 'shield',
+    file: csrCert,
+    icon: 'book',
     color: 'from-rose-500 to-red-500',
   },
-  // {
-  //   name: 'Secretary Biodata',
-  //   description: 'Profile & Biodata of the Trust Secretary',
-  //   type: 'pdf',
-  //   file: secretaryBio,
-  //   icon: 'book',
-  //   color: 'from-violet-500 to-purple-500',
-  // },
+    {
+    name: 'Registration Certificate',
+    description: '',
+    type: 'pdf',
+    file: registrationCert,
+    icon: 'shield',
+    color: 'from-yellow-500 to-yellow-500',
+  },
+      {
+    name: 'e-anudhan Certificate',
+    description: '',
+    type: 'pdf',
+    file: eAnudhanCert,
+    icon: 'award',
+    color: 'from-green-800 to-green-500',
+  },
+    {
+    name: 'Pan Card',
+    description: '',
+    type: 'pdf',
+    file: panCard,
+    icon: 'file',
+    color: 'from-gray-600 to-gray-600',
+  },
 ];
 
 const iconMap = {
@@ -96,14 +107,14 @@ const Certificates = () => {
     }
   };
 
-  const handleDownload = (cert: Certificate) => {
-    const link = document.createElement('a');
-    link.href = cert.file;
-    link.download = cert.name;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  // const handleDownload = (cert: Certificate) => {
+  //   const link = document.createElement('a');
+  //   link.href = cert.file;
+  //   link.download = cert.name;
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // };
 
   return (
     <section id="certificates" className="py-20 bg-gradient-to-b from-gray-50 to-white">
@@ -166,13 +177,13 @@ const Certificates = () => {
                       <Eye size={16} />
                       View
                     </button>
-                    <button
+                    {/* <button
                       onClick={() => handleDownload(cert)}
                       className={`flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-r ${cert.color} text-white rounded-xl text-sm font-medium transition-all duration-300 hover:shadow-lg hover:scale-105`}
                     >
                       <Download size={16} />
                       Download
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>

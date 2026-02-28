@@ -1,5 +1,5 @@
 import { MapPin, Phone, Mail, Heart, ArrowUp } from 'lucide-react';
-import logoImg from '../assets/logo/IMG-20260128-WA0000.jpg';
+import logoImg from '../assets/logo/logo.jpeg';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -15,8 +15,8 @@ const Footer = () => {
 
   const getInvolved = [
     { name: 'Donate', href: '#donate' },
-    { name: 'Volunteer', href: '#get-involved' },
-    { name: 'Partner With Us', href: '#partners' },
+    { name: 'Volunteer', href: '#contact' },
+    { name: 'Certificates', href: '#certificates' },
     { name: 'CSR Opportunities', href: '#donate' },
   ];
 
@@ -26,11 +26,11 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
             <div className="flex items-center space-x-3 mb-6">
-            <img
-              src={logoImg}
-              alt="Lisha Charitable Seva Trust Logo"
-              className="w-14 h-14 rounded-full object-cover shadow-md"
-            />
+              <img
+                src={logoImg}
+                alt="Lisha Charitable Seva Trust Logo"
+                className="w-14 h-14 rounded-full object-cover shadow-md"
+              />
               <div>
                 <h3 className="text-xl font-bold">Lisha Charitable Seva Trust</h3>
               </div>
@@ -116,7 +116,7 @@ const Footer = () => {
               <li className="flex items-start">
                 <Mail className="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
                 <div className="text-gray-400 text-sm break-all">
-                  lishacharitabletrust888@gmail.com
+                  admin@lishacharitabletrust.org
                 </div>
               </li>
             </ul>

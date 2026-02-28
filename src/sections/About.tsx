@@ -1,4 +1,5 @@
 import { Target, Eye, Award, Shield, Lightbulb, Users, Heart, Flag, FileCheck, BadgeCheck, Building2, Sparkles, GraduationCap, Sprout, HandHeart, Droplets, Briefcase } from 'lucide-react';
+import tlishaImage from '../assets/images/TLisha.jpeg';
 
 const About = () => {
   const focusAreas = [
@@ -30,34 +31,43 @@ const About = () => {
   return (
     <section id="about" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">About Us</h2>
-          <div className="w-24 h-1 bg-green-600 mx-auto mb-8"></div>
-          <p className="text-xl text-gray-800 max-w-3xl mx-auto">
-            Lisha Charitable Seva Trust is dedicated to empowering rural communities through
-            sustainable development programs and selfless service.
-          </p>
-        </div>
+        {/* Header + Who We Are — two column layout */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
+          {/* Left: text content */}
+          <div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">About Us</h2>
+            <div className="w-24 h-1 bg-green-600 mb-8"></div>
+            <p className="text-xl text-gray-800 mb-6">
+              Lisha Charitable Seva Trust is dedicated to empowering rural communities through
+              sustainable development programs and selfless service.
+            </p>
+            <p className="text-gray-600 text-lg leading-relaxed mb-4">
+              Lisha Charitable Seva Trust is a registered non-profit organization based in Doddabidare,
+              Chikkabidare (Post), C N Halli Taluk, Tumkur District, Karnataka. Founded in 2025, the Trust
+              is committed to uplifting rural communities through integrated development programs that
+              address education, agriculture, health, and livelihoods.
+            </p>
+            <p className="text-gray-600 text-lg leading-relaxed mb-8">
+              Our team brings together decades of professional experience from organizations like the
+              World Bank, DFID, NABARD, and various State and Central Government bodies. We believe in a
+              grassroots approach — working directly with communities to understand their needs and
+              co-create sustainable solutions.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <span className="bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium border border-green-200">12A Certified</span>
+              <span className="bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium border border-green-200">80G Tax Exemption</span>
+              <span className="bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium border border-green-200">Darpan Registered</span>
+              <span className="bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium border border-green-200">LEI Certified</span>
+            </div>
+          </div>
 
-        {/* Who We Are */}
-        <div className="mb-20 max-w-4xl mx-auto">
-          <p className="text-gray-600 text-lg leading-relaxed mb-4 text-center">
-            Lisha Charitable Seva Trust is a registered non-profit organization based in Doddabidare,
-            Chikkabidare (Post), C N Halli Taluk, Tumkur District, Karnataka. Founded in 2025, the Trust
-            is committed to uplifting rural communities through integrated development programs that
-            address education, agriculture, health, and livelihoods.
-          </p>
-          <p className="text-gray-600 text-lg leading-relaxed mb-8 text-center">
-            Our team brings together decades of professional experience from organizations like the
-            World Bank, DFID, NABARD, and various State and Central Government bodies. We believe in a
-            grassroots approach — working directly with communities to understand their needs and
-            co-create sustainable solutions.
-          </p>
-          <div className="flex flex-wrap gap-3 justify-center">
-            <span className="bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium border border-green-200">12A Certified</span>
-            <span className="bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium border border-green-200">80G Tax Exemption</span>
-            <span className="bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium border border-green-200">Darpan Registered</span>
-            <span className="bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium border border-green-200">LEI Certified</span>
+          {/* Right: image */}
+          <div className="flex justify-center lg:justify-end">
+            <img
+              src={tlishaImage}
+              alt="Lisha Charitable Seva Trust"
+              className="w-full max-w-md rounded-2xl shadow-xl object-cover"
+            />
           </div>
         </div>
 

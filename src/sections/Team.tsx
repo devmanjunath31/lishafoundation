@@ -96,14 +96,14 @@ const Team = () => {
             </h3>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {leadership.map((member, index) => (
               <div
                 key={index}
-                className={`group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 ${member.highlight ? 'ring-2 ring-green-500 ring-offset-4' : ''}`}
+                className={`group relative bg-gray-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 ring-2 ring-green-500 ring-offset-4`}
               >
                 {/* Image container - fixed height with smart positioning based on aspect ratio */}
-                <div className="relative h-72 sm:h-64 lg:h-72 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
+                <div className="relative h-48 sm:h-44 lg:h-48 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
                   <img
                     src={member.image}
                     alt={member.name}

@@ -62,7 +62,7 @@ const Hero = () => {
                   <Heart className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 </a>
                 <a
-                  href="#get-involved"
+                  href="#contact"
                   className="group inline-flex items-center justify-center gap-3 px-8 py-3.5 bg-white text-green-700 border border-green-600 rounded-xl font-semibold text-base hover:border-green-500 hover:bg-green-50 hover:text-green-800 transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5"
                 >
                   Become a Volunteer

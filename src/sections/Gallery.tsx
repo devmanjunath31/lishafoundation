@@ -1,8 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { X, ChevronLeft, ChevronRight, Camera, ZoomIn } from 'lucide-react';
 
-import activity01 from '../assets/images/activity/activity-01.jpg';
-import activity02 from '../assets/images/activity/activity-02.jpg';
 import activity03 from '../assets/images/activity/activity-03.jpg';
 import activity04 from '../assets/images/activity/activity-04.jpg';
 import activity05 from '../assets/images/activity/activity-05.jpg';
@@ -14,22 +12,27 @@ import activity10 from '../assets/images/activity/activity-10.jpg';
 import activity11 from '../assets/images/activity/activity-11.jpg';
 import activity12 from '../assets/images/activity/activity-12.jpg';
 import activity13 from '../assets/images/activity/activity-13.jpg';
-import activity14 from '../assets/images/activity/activity-14.jpg';
-import activity15 from '../assets/images/activity/activity-15.jpg';
 import activity16 from '../assets/images/activity/activity-16.jpg';
-import activity17 from '../assets/images/activity/activity-17.jpg';
 import activity18 from '../assets/images/activity/activity-18.jpg';
 import activity19 from '../assets/images/activity/activity-19.jpg';
 import activity20 from '../assets/images/activity/activity-20.jpg';
+
+import donate1 from "../assets/images/activity/donate1.jpeg";
+import donate2 from "../assets/images/activity/donate2.jpeg";
+import donate3 from "../assets/images/activity/donate3.jpeg";
+
+import meeting1 from "../assets/images/activity/meeting1.jpeg";
+import meeting2 from "../assets/images/activity/meeting2.jpeg";
 
 const Gallery = () => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const activityImages = [
-    activity01, activity02, activity03, activity04, activity05,
+    activity03, activity04, activity05,
     activity06, activity07, activity08, activity09, activity10,
-    activity11, activity12, activity13, activity14, activity15,
-    activity16, activity17, activity18, activity19, activity20,
+    activity11, activity12, activity13,
+    activity16, activity18, activity19, activity20,
+    donate1, donate2, donate3, meeting1, meeting2
   ];
 
   const openLightbox = (index: number) => {
