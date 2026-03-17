@@ -12,9 +12,9 @@ const Hero = () => {
   ];
 
   const achievements = [
-    { icon: Users, title: 'Recent Achievement', description: 'Successfully established 5 Self Help Groups impacting 150 women in rural areas' },
-    { icon: Leaf, title: 'Latest Project', description: 'Watershed development project covering 500 acres in 3 villages' },
-    { icon: BookOpen, title: 'Community Impact', description: '25 school dropout children rejoined education programs this year' },
+    { icon: Users, title: 'Recent Achievement', description: 'Successfully established 5 Self Help Groups impacting 150 women in rural areas', bg: 'bg-blue-50 hover:bg-blue-100', iconBg: 'bg-blue-500', border: 'border-blue-200', title_color: 'text-blue-800', desc_color: 'text-blue-700' },
+    { icon: Leaf, title: 'Latest Project', description: 'Watershed development project covering 500 acres in 3 villages', bg: 'bg-emerald-50 hover:bg-emerald-100', iconBg: 'bg-emerald-500', border: 'border-emerald-200', title_color: 'text-emerald-800', desc_color: 'text-emerald-700' },
+    { icon: BookOpen, title: 'Community Impact', description: '25 school dropout children rejoined education programs this year', bg: 'bg-amber-50 hover:bg-amber-100', iconBg: 'bg-amber-500', border: 'border-amber-200', title_color: 'text-amber-800', desc_color: 'text-amber-700' },
   ];
 
   return (
@@ -120,15 +120,11 @@ const Hero = () => {
       </div>
 
       {/* Achievement Banner */}
-      <div className="relative bg-gradient-to-r from-green-600 via-emerald-600 to-green-700 text-white py-16 overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
-
+      <div className="relative py-16 overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold mb-2">Our Impact at a Glance</h2>
-            <p className="text-green-200">Making a difference every day</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Our Impact at a Glance</h2>
+            <p className="text-gray-500">Making a difference every day</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -137,15 +133,15 @@ const Hero = () => {
               return (
                 <div
                   key={index}
-                  className="group bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 border border-white/10"
+                  className={`group ${item.bg} rounded-2xl p-6 transition-all duration-300 border ${item.border} shadow-sm hover:shadow-md hover:-translate-y-1`}
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <div className={`w-12 h-12 ${item.iconBg} rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md`}>
                       <Icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                      <p className="text-green-100 text-sm leading-relaxed">
+                      <h3 className={`text-lg font-semibold mb-2 ${item.title_color}`}>{item.title}</h3>
+                      <p className={`text-sm leading-relaxed ${item.desc_color}`}>
                         {item.description}
                       </p>
                     </div>

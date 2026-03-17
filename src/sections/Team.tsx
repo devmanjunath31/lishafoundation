@@ -1,4 +1,22 @@
-import { Users, UserCircle, Heart, Award, Sparkles } from 'lucide-react';
+import { useState } from 'react';
+import { Users, UserCircle, Heart, Award } from 'lucide-react';
+
+const ExpandableDescription = ({ text }: { text: string }) => {
+  const [expanded, setExpanded] = useState(false);
+  return (
+    <div>
+      <p className={`text-gray-600 text-sm leading-relaxed ${!expanded ? 'line-clamp-6' : ''}`}>
+        {text}
+      </p>
+      <button
+        onClick={() => setExpanded(!expanded)}
+        className="mt-1 text-green-600 text-xs font-medium hover:text-green-800 transition-colors"
+      >
+        {expanded ? 'View less' : 'View more'}
+      </button>
+    </div>
+  );
+};
 
 import secretaryImg from '../assets/images/team/secretary.jpeg';
 import treasurerImg from '../assets/images/team/treasurer.jpg';
@@ -6,10 +24,11 @@ import trustee1Img from '../assets/images/team/trustee-1.jpeg';
 import trustee2Img from '../assets/images/team/trustee-2.jpg';
 import presidentImg from '../assets/images/team/president.jpeg';
 import jointSecretaryImg from '../assets/images/team/joint_secretary.jpeg';
+import projectManagerImg from '../assets/images/team/Project-Manager.jpeg';
 
 const Team = () => {
   const leadership = [
-        {
+    {
       name: 'Govindaraju EK',
       designation: 'President',
       image: presidentImg,
@@ -25,7 +44,7 @@ const Team = () => {
       highlight: true,
       isLandscape: true
     },
-        {
+    {
       name: 'Chandrakala HG',
       designation: 'Joint Secretary',
       image: jointSecretaryImg,
@@ -57,145 +76,153 @@ const Team = () => {
       highlight: false,
       isLandscape: false
     },
+    {
+      name: 'Neethu N Vasu',
+      designation: 'Project Manager',
+      image: projectManagerImg,
+      description: 'Brings 9 years of NGO sector experience as a Project Incharge, Project Manager, and Personal & Career Counselor. Led projects and teams across education, healthcare, and social causes, driving stakeholder engagement, community outreach, and program development. Built impactful partnerships with corporates, governments, and communities for CSR initiatives. Empowered individuals through career guidance and counseling, with strengths in strategic planning, problem-solving, and fostering team growth.',
+      highlight: false,
+      isLandscape: false,
+    },
   ];
 
-  // const stats = [
-  //   { icon: Shield, value: '6', label: 'Leadership Members', color: 'from-green-500 to-emerald-600' },
-  //   { icon: Users, value: '18', label: 'Staff Members', color: 'from-blue-500 to-cyan-600' },
-  //   { icon: UserCircle, value: '20', label: 'Volunteers', color: 'from-amber-500 to-orange-600' },
-  // ];
+// const stats = [
+//   { icon: Shield, value: '6', label: 'Leadership Members', color: 'from-green-500 to-emerald-600' },
+//   { icon: Users, value: '18', label: 'Staff Members', color: 'from-blue-500 to-cyan-600' },
+//   { icon: UserCircle, value: '20', label: 'Volunteers', color: 'from-amber-500 to-orange-600' },
+// ];
 
-  return (
-    <section id="team" className="py-24 bg-gradient-to-b from-white via-green-50/30 to-white relative overflow-hidden">
-      {/* Decorative background elements */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-green-100/40 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-emerald-100/40 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
-      <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-gradient-to-r from-green-50 to-emerald-50 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 opacity-50" />
+return (
+  <section id="team" className="py-24 bg-gradient-to-b from-white via-green-50/30 to-white relative overflow-hidden">
+    {/* Decorative background elements */}
+    <div className="absolute top-0 left-0 w-96 h-96 bg-green-100/40 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+    <div className="absolute bottom-0 right-0 w-96 h-96 bg-emerald-100/40 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+    <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-gradient-to-r from-green-50 to-emerald-50 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 opacity-50" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header */}
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <Heart className="w-4 h-4" />
-            The People Behind Our Mission
-          </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            Meet Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600">Team</span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            A dedicated team of professionals committed to transforming lives and serving the community with passion and purpose
-          </p>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* Header */}
+      <div className="text-center mb-20">
+        <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <Heart className="w-4 h-4" />
+          The People Behind Our Mission
+        </div>
+        <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+          Meet Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600">Team</span>
+        </h2>
+        <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          A dedicated team of professionals committed to transforming lives and serving the community with passion and purpose
+        </p>
+      </div>
+
+      {/* Leadership Section */}
+      <div className="mb-20">
+        <div className="flex items-center justify-center gap-3 mb-12">
+          <Award className="w-8 h-8 text-green-600" />
+          <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
+            Trust Administration
+          </h3>
         </div>
 
-        {/* Leadership Section */}
-        <div className="mb-20">
-          <div className="flex items-center justify-center gap-3 mb-12">
-            <Award className="w-8 h-8 text-green-600" />
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
-              Trust Administration
-            </h3>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            {leadership.map((member, index) => (
-              <div
-                key={index}
-                className={`group relative bg-gray-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 ring-2 ring-green-500 ring-offset-4`}
-              >
-                {/* Image container - fixed height with smart positioning based on aspect ratio */}
-                <div className="relative h-48 sm:h-44 lg:h-48 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${
-                      member.isLandscape ? 'object-center' : 'object-top'
+        <div className="flex flex-wrap gap-x-4 gap-y-8">
+          {leadership.map((member, index) => (
+            <div
+              key={index}
+              className="group relative bg-gray-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 ring-2 ring-green-500 ring-offset-4 w-[47%] sm:w-[30%] lg:w-[18%]"
+            >
+              {/* Image container - fixed height with smart positioning based on aspect ratio */}
+              <div className="relative h-48 sm:h-44 lg:h-48 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${member.isLandscape ? 'object-center' : 'object-top'
                     }`}
-                  />
-                  {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                  {/* Designation badge */}
-                  <div className="absolute top-4 right-4">
+                {/* Designation badge */}
+                {/* <div className="absolute top-4 right-4">
                     <span className="inline-flex items-center gap-1 bg-white/90 backdrop-blur-sm text-green-700 px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
                       {member.highlight && <Sparkles className="w-3 h-3" />}
                       {member.designation}
                     </span>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6 bg-gradient-to-b from-white to-gray-50">
-                  <h4 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-green-600 transition-colors">
-                    {member.name}
-                  </h4>
-                  <div className="w-12 h-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mb-3 group-hover:w-20 transition-all duration-500" />
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {member.description}
-                  </p>
-                </div>
+                  </div> */}
               </div>
-            ))}
+
+              {/* Content */}
+              <div className="p-6 bg-gradient-to-b from-white to-gray-50">
+                <div className='h-14'>
+                  <h5 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-green-600 transition-colors">
+                    {member.name}
+                  </h5>
+                </div>
+                <span className="text-green-600">{member.designation}</span>
+                <div className="w-12 h-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mb-3 group-hover:w-20 transition-all duration-500" />
+                <ExpandableDescription text={member.description} />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Team Cards */}
+      <div className="grid md:grid-cols-2 gap-8">
+        <div className="group relative bg-gradient-to-br from-green-600 to-emerald-700 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
+          {/* Decorative elements */}
+          <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-2xl" />
+          <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full blur-xl" />
+
+          <div className="relative z-10">
+            <div className="flex items-center mb-6">
+              <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mr-5 group-hover:scale-110 transition-transform duration-500">
+                <Users className="w-8 h-8 text-white" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-white">Program Office</h3>
+                <p className="text-green-200 text-sm">18 Dedicated Members</p>
+              </div>
+            </div>
+            <p className="text-white/90 mb-4 leading-relaxed">
+              Our program office comprises 18 dedicated staff members working across various
+              departments including education, agriculture, women empowerment, and livelihood
+              programs.
+            </p>
+            <p className="text-green-200 text-sm leading-relaxed">
+              Each team member brings specialized expertise to ensure effective program implementation
+              and community engagement.
+            </p>
           </div>
         </div>
 
-        {/* Team Cards */}
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="group relative bg-gradient-to-br from-green-600 to-emerald-700 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
-            {/* Decorative elements */}
-            <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-2xl" />
-            <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full blur-xl" />
+        <div className="group relative bg-gradient-to-br from-amber-500 to-orange-600 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
+          {/* Decorative elements */}
+          <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-2xl" />
+          <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full blur-xl" />
 
-            <div className="relative z-10">
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mr-5 group-hover:scale-110 transition-transform duration-500">
-                  <Users className="w-8 h-8 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-white">Program Office</h3>
-                  <p className="text-green-200 text-sm">18 Dedicated Members</p>
-                </div>
+          <div className="relative z-10">
+            <div className="flex items-center mb-6">
+              <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mr-5 group-hover:scale-110 transition-transform duration-500">
+                <UserCircle className="w-8 h-8 text-white" />
               </div>
-              <p className="text-white/90 mb-4 leading-relaxed">
-                Our program office comprises 18 dedicated staff members working across various
-                departments including education, agriculture, women empowerment, and livelihood
-                programs.
-              </p>
-              <p className="text-green-200 text-sm leading-relaxed">
-                Each team member brings specialized expertise to ensure effective program implementation
-                and community engagement.
-              </p>
-            </div>
-          </div>
-
-          <div className="group relative bg-gradient-to-br from-amber-500 to-orange-600 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
-            {/* Decorative elements */}
-            <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-2xl" />
-            <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full blur-xl" />
-
-            <div className="relative z-10">
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mr-5 group-hover:scale-110 transition-transform duration-500">
-                  <UserCircle className="w-8 h-8 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-white">Voluntary Work Force</h3>
-                  <p className="text-amber-200 text-sm">20 Passionate Volunteers</p>
-                </div>
+              <div>
+                <h3 className="text-2xl font-bold text-white">Voluntary Work Force</h3>
+                <p className="text-amber-200 text-sm">20 Passionate Volunteers</p>
               </div>
-              <p className="text-white/90 mb-4 leading-relaxed">
-                A passionate group of 20 volunteers support our initiatives through field work,
-                training, and community mobilization efforts.
-              </p>
-              <p className="text-amber-200 text-sm leading-relaxed">
-                Our volunteers are the backbone of our grassroots programs, bringing energy and
-                commitment to every project.
-              </p>
             </div>
+            <p className="text-white/90 mb-4 leading-relaxed">
+              A passionate group of 20 volunteers support our initiatives through field work,
+              training, and community mobilization efforts.
+            </p>
+            <p className="text-amber-200 text-sm leading-relaxed">
+              Our volunteers are the backbone of our grassroots programs, bringing energy and
+              commitment to every project.
+            </p>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </div>
+  </section>
+);
 };
 
 export default Team;

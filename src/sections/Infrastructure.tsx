@@ -40,7 +40,7 @@ const Infrastructure = () => {
     {
       icon: MapPin,
       title: 'Field Operations',
-      details: ['Coverage across 50+ villages', 'Mobile service points', 'Community centers'],
+      details: ['Coverage across 62+ villages', 'Mobile service points', 'Community centers'],
       color: 'from-teal-500 to-cyan-500',
       bgColor: 'bg-teal-50',
     },

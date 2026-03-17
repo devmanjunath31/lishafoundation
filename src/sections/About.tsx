@@ -3,12 +3,12 @@ import tlishaImage from '../assets/images/TLisha.jpeg';
 
 const About = () => {
   const focusAreas = [
-    { icon: GraduationCap, title: 'Education & Skill Development', description: 'Providing quality education, vocational training, and skill-building programs for youth and adults in rural areas to enhance employability and self-reliance.' },
-    { icon: HandHeart, title: 'Women Empowerment', description: 'Empowering women through Self-Help Groups, financial literacy, micro-enterprise development, and leadership training to foster economic independence.' },
-    { icon: Sprout, title: 'Sustainable Agriculture', description: 'Promoting organic farming, millet cultivation, and modern agricultural practices to improve farm productivity, food security, and farmer incomes.' },
-    { icon: Droplets, title: 'Water & Environment', description: 'Implementing water conservation projects, watershed management, and environmental sustainability programs to protect natural resources.' },
-    { icon: Briefcase, title: 'Livelihood Generation', description: 'Creating sustainable livelihood opportunities through Farmer Producer Organizations, value chain development, and market linkages for rural communities.' },
-    { icon: Heart, title: 'Health & Rehabilitation', description: 'Bridging healthcare gaps through community health programs, rehabilitation support, and awareness campaigns in underserved rural areas.' },
+    { icon: GraduationCap, title: 'Education & Skill Development', description: 'Providing quality education, vocational training, and skill-building programs for youth and adults in rural areas to enhance employability and self-reliance.', color: 'from-blue-500 to-cyan-500', cardBg: 'bg-blue-50', border: 'border-blue-100 hover:border-blue-300', titleColor: 'text-blue-900', descColor: 'text-blue-700' },
+    { icon: HandHeart, title: 'Women Empowerment', description: 'Empowering women through Self-Help Groups, financial literacy, micro-enterprise development, and leadership training to foster economic independence.', color: 'from-pink-500 to-rose-500', cardBg: 'bg-pink-50', border: 'border-pink-100 hover:border-pink-300', titleColor: 'text-pink-900', descColor: 'text-pink-700' },
+    { icon: Sprout, title: 'Sustainable Agriculture', description: 'Promoting organic farming, millet cultivation, and modern agricultural practices to improve farm productivity, food security, and farmer incomes.', color: 'from-green-500 to-emerald-600', cardBg: 'bg-green-50', border: 'border-green-100 hover:border-green-300', titleColor: 'text-green-900', descColor: 'text-green-700' },
+    { icon: Droplets, title: 'Water & Environment', description: 'Implementing water conservation projects, watershed management, and environmental sustainability programs to protect natural resources.', color: 'from-sky-500 to-blue-600', cardBg: 'bg-sky-50', border: 'border-sky-100 hover:border-sky-300', titleColor: 'text-sky-900', descColor: 'text-sky-700' },
+    { icon: Briefcase, title: 'Livelihood Generation', description: 'Creating sustainable livelihood opportunities through Farmer Producer Organizations, value chain development, and market linkages for rural communities.', color: 'from-amber-500 to-orange-500', cardBg: 'bg-amber-50', border: 'border-amber-100 hover:border-amber-300', titleColor: 'text-amber-900', descColor: 'text-amber-700' },
+    { icon: Heart, title: 'Health & Rehabilitation', description: 'Bridging healthcare gaps through community health programs, rehabilitation support, and awareness campaigns in underserved rural areas.', color: 'from-red-500 to-rose-600', cardBg: 'bg-rose-50', border: 'border-rose-100 hover:border-rose-300', titleColor: 'text-rose-900', descColor: 'text-rose-700' },
   ];
   
   const coreValues = [
@@ -145,13 +145,13 @@ const About = () => {
               return (
                 <div
                   key={index}
-                  className="group bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl hover:border-green-200 transition-all duration-300 hover:-translate-y-1"
+                  className={`group ${area.cardBg} rounded-2xl p-6 shadow-sm border ${area.border} hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}
                 >
-                  <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                  <div className={`w-14 h-14 bg-linear-to-br ${area.color} rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-md`}>
                     <Icon className="w-7 h-7 text-white" />
                   </div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-3">{area.title}</h4>
-                  <p className="text-gray-600 leading-relaxed">{area.description}</p>
+                  <h4 className={`text-xl font-bold mb-3 ${area.titleColor}`}>{area.title}</h4>
+                  <p className={`leading-relaxed ${area.descColor}`}>{area.description}</p>
                 </div>
               );
             })}

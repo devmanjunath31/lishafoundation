@@ -13,7 +13,7 @@ const Donation = () => {
 
   const certifications = [
     { label: 'Trust Reg. Act 1882', value: 'Registered', icon: Building2, color: 'from-blue-500 to-cyan-500' },
-    { label: 'PAN', value: 'AACTL6698K', icon: FileCheck, color: 'from-green-500 to-emerald-500' },
+    { label: 'PAN', value: 'Active', icon: FileCheck, color: 'from-green-500 to-emerald-500' },
     { label: '12A Registration', value: 'Active', icon: ShieldCheck, color: 'from-amber-500 to-orange-500' },
     { label: '80G Registration', value: 'Active', icon: ShieldCheck, color: 'from-purple-500 to-violet-500' },
   ];
@@ -61,8 +61,8 @@ const Donation = () => {
                     key={index}
                     className="flex justify-between items-center py-3 px-4 rounded-xl bg-gray-50 hover:bg-green-50 transition-colors"
                   >
-                    <span className="text-gray-600 font-medium">{detail.label}</span>
-                    <span className={`text-gray-900 font-semibold ${detail.isMono ? 'font-mono bg-gray-100 px-3 py-1 rounded-lg text-sm' : ''}`}>
+                    <span className="text-gray-600 font-medium text-xl">{detail.label}</span>
+                    <span className={`text-gray-900 font-semibold text-sm ${detail.isMono ? 'font-mono bg-gray-100 px-3 py-1 rounded-lg text-sm' : ''}`}>
                       {detail.value}
                     </span>
                   </div>
